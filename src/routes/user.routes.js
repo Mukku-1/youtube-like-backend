@@ -36,7 +36,7 @@ router
   .route("/avatar")
   .patch(verifyJwt, upload.single("avatar"), updataUserAvatar);
 router
-  .route("/cover-imager")
+  .route("/cover-image")
   .patch(verifyJwt, upload.single("coverImage"), updataUserCoverImage);
 
 export default router;

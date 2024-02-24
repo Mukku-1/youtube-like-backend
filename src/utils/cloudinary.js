@@ -22,12 +22,13 @@ const uploadOnCloudinary = async (localFilePath) => {
   }
 };
 
-const deleteOnCloudinary = async (path) => {
+const deleteOnCloudinary = async (public_id) => {
+  console.log("this mgs from deletercloudinay func ", public_id);
   try {
-    if (!path) {
+    if (!public_id) {
       return null;
     }
-    await cloudinary.uploader.destroy(path);
+    return await cloudinary.uploader.destroy(public_id);
   } catch (error) {
     console.log(error?.message);
   }

@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken";
-import bcrypt, { compare } from "bcrypt";
+import bcrypt from "bcrypt";
 
 const userSchema = new Schema(
   {
@@ -27,11 +27,13 @@ const userSchema = new Schema(
       index: true,
     },
     avatar: {
-      type: String,
+      type: Object,
       required: true,
+      default: { url: "", public_id: "" },
     },
     coverImage: {
-      type: String,
+      type: Object,
+      default: { url: "", public_id: "" },
     },
     watchHistory: {
       type: Schema.Types.ObjectId,
